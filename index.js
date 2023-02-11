@@ -9,14 +9,20 @@ const fs = require("fs");
 
 
 // fs.readFileSync('read.txt');
-const buf_Data = fs.readFileSync('read.txt');//Displays the data of read.txt file on console.
+// const buf_Data = fs.readFileSync('read.txt');//Displays the data of read.txt file on console.
 // console.log(buf_Data);
 //Node js includes an additional dataype called Buffer.
 // Buffer is mainly used to store binary data
 // While reading from a file or receiving packets over the network.
-new_data = buf_Data.toString();
-console.log(new_data);
+// new_data = buf_Data.toString();
+// console.log(new_data);
 
 
 //To rename file
-fs.renameSync('read.txt','readwrite.txt');
+// fs.renameSync('read.txt','readwrite.txt');
+
+
+//Creating folder
+fs.mkdirSync('Ex1');
+
+
