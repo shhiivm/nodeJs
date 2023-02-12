@@ -8,7 +8,5 @@ const add = (a,b) =>{
         return a*b;
     }
     
-    module.exports.add=add;
-    module.exports.sub=sub;
-    module.exports.mul=mul;
+    module.exports = {add,sub,mul};
     
