@@ -10,15 +10,8 @@ const EventsEmitter = require('events'); //EventsEmitter is an object
 
 const event = new EventsEmitter(); // events is the object of class EventsEmitter
 
-event.on('myName',()=>{
-    console.log("Shiv");
-});
-event.on('myName',()=>{
-    console.log("Anand");
-});
-event.on('myName',()=>{
-    console.log("Singh");
+event.on('checkPage',(statusCode,msg)=>{
+    console.log(`Status code is ${statusCode} and the page is ${msg}`)
 });
 
-event.emit('myName');
-
+event.emit('checkPage',200,'Valid');
