@@ -23,12 +23,16 @@ const server = http.createServer((req,res)=>{
     //Reading from stream, Creating a readable stream.
     //Handle stream events --> data, end, and error.
 
-    const readSteam = fs.createReadStream('input.txt');
+    const readSteam = fs.createReadStream('inputs.txt');
     readSteam.on('data',(chunkData)=>{
         res.write(chunkData);
     });
     readSteam.on("end",()=>{
         res.end();
+    });
+    readSteam.on("error", (err)=>{
+        console.log(err);
+        res.end("File not found!");
     });
 });
 server.listen(8000,"127.0.0.1",()=>{
