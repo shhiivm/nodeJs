@@ -13,9 +13,22 @@ const fs = require('fs');
 const http = require('http');
 
 const server = http.createServer((req,res)=>{
-    fs.readFile('input.txt',(err,data)=>{
-        if(err) return console.log(err);
-        res.end(data.toString());
+    //Reading file in normal way
+    // fs.readFile('input.txt',(err,data)=>{
+    //     if(err) return console.log(err);
+    //     res.end(data.toString());
+    // });
+
+
+    //Reading from stream, Creating a readable stream.
+    //Handle stream events --> data, end, and error.
+
+    const readSteam = fs.createReadStream('input.txt');
+    readSteam.on('data',(chunkData)=>{
+        res.write(chunkData);
+    });
+    readSteam.on("end",()=>{
+        res.end();
     });
 });
 server.listen(8000,"127.0.0.1",()=>{
