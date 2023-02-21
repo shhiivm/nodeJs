@@ -5,3 +5,5 @@ fsAsync/
 npm Module/package.json
 node_modules/
 npmMod/
+package-lock.json
+package.json
