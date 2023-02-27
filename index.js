@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 // Creating a new File
-// fs.writeFileSync('read.txt',"This is my first node program");//if file is not present, then it will create one and insert the data
+fs.writeFileSync('read.txt',"This is my first node program");//if file is not present, then it will create one and insert the data
 // fs.writeFileSync('read.txt',"Hello, Shivanand singh");//if file is present, then it will override the present data.
 
 // fs.appendFileSync('read.txt'," How are you?");//It appends the data.
